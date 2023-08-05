@@ -9,3 +9,9 @@ def merge_dicts(dict1, dict2):
         if key in dict1 and key in dict2:
             merged_dict[key] = dict1[key] + dict2[key]
     return merged_dict
+
+def merge_dicts2(dict1, dict2):
+    result = dict1.copy()
+    for key, value in dict2.items():
+        result[key] = result.get(key, 0) + value
+    return result
