@@ -12,3 +12,6 @@ def max_value_key(my_dict):
             max_key = key
             max_value = my_dict[max_key]
     return max_key
+
+def max_value_key_improved(my_dict):
+    return max(my_dict, key=my_dict.get)
