@@ -8,3 +8,7 @@ def get_diagonal(tup):
     for i in range(len(tup)):
         output_tuple = output_tuple + (tup[i[i]])
     return output_tuple
+
+# Cleaner solution
+def get_diagonal_1(tup):
+    return (tup[i][i] for i in range(len(tup)))
