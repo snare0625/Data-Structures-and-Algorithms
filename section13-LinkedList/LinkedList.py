@@ -91,16 +91,27 @@ class LinkedList:
             temp.value = value
             return True
         return False
+    
+    def pop_first(self):
+        if self.length == 0:
+            return None
+        popped_node = self.head
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next
+            popped_node.next = None
+        self.length -= 1
+        return popped_node
         
 new_linkedlist = LinkedList()
 new_linkedlist.append(10)
 new_linkedlist.append(20)
-print(new_linkedlist)
 new_linkedlist.prepend(5)
 new_linkedlist.prepend(9)
-print(new_linkedlist)
+
 new_linkedlist.insert(2, 7)
-print(new_linkedlist)
-new_linkedlist.traverse()
-print(new_linkedlist.search(7))
-print(new_linkedlist.get(0))
+print(new_linkedlist.traverse())
+new_linkedlist.pop_first()
+print(new_linkedlist.traverse())
