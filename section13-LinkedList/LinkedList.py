@@ -104,6 +104,17 @@ class LinkedList:
             popped_node.next = None
         self.length -= 1
         return popped_node
+    
+    def pop(self):
+        popped_node = self.tail
+        temp = self.head
+        while temp.next is not self.tail:
+            temp = temp.next
+        self.tail = temp
+        temp.next = None
+        return popped_node
+
+    
         
 new_linkedlist = LinkedList()
 new_linkedlist.append(10)
