@@ -126,7 +126,7 @@ class LinkedList:
             return None
         if index == 0:
             return self.pop_first()
-        if index  == self.length - 1:
+        if index  == self.length - 1 or index == 1:
             return self.pop()
         prev_node = self.get(index - 1)
         popped_node = prev_node.next
