@@ -106,13 +106,32 @@ class LinkedList:
         return popped_node
     
     def pop(self):
-        popped_node = self.tail
-        temp = self.head
-        while temp.next is not self.tail:
-            temp = temp.next
-        self.tail = temp
-        temp.next = None
-        self.length -= 1
+        if self.length == 0:
+            return None
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            popped_node = self.tail
+            temp = self.head
+            while temp.next is not self.tail:
+                temp = temp.next
+            self.tail = temp
+            temp.next = None
+            self.length -= 1
+            return popped_node
+    
+    def remove(self, index):
+        if index > self.length-1 or index < -1:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index  == self.length - 1:
+            return self.pop()
+        prev_node = self.get(index - 1)
+        popped_node = prev_node.next
+        prev_node.next = popped_node.next
+        popped_node.next = None
         return popped_node
 
     
@@ -123,7 +142,6 @@ new_linkedlist.append(20)
 new_linkedlist.prepend(5)
 new_linkedlist.prepend(9)
 
-new_linkedlist.insert(2, 7)
 print(new_linkedlist.traverse())
-new_linkedlist.pop_first()
+new_linkedlist.remove(0)
 print(new_linkedlist.traverse())
