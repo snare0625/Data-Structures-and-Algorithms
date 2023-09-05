@@ -133,6 +133,11 @@ class LinkedList:
         prev_node.next = popped_node.next
         popped_node.next = None
         return popped_node
+    
+    def delete_all(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
 
     
         
