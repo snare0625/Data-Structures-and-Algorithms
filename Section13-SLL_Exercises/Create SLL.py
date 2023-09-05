@@ -23,7 +23,7 @@ class Node:
     
 class LinkedList:
     def __init__(self, value):
-        self.value = value
+        self.new_node = Node(value)
         self.head = self.value
         self.tail = self.tail
         self.length = 1
