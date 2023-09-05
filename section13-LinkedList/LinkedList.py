@@ -112,6 +112,7 @@ class LinkedList:
             temp = temp.next
         self.tail = temp
         temp.next = None
+        self.length -= 1
         return popped_node
 
     
